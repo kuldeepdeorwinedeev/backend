@@ -6,7 +6,7 @@ import cors from "@fastify/cors";
 const fastify = Fastify({ logger: true });
 const db = fastify.register(dabasePlugin);
 await fastify.register(cors, {
-  origin: `https://deorwine-kuldeep.vercel.app/`,
+  origin: `https://deorwine-kuldeep-q5ix-gzm1yjyf0.vercel.app/`,
 });
 authRoutes.forEach((route) => {
   const base_path = "/api/v4/user";
