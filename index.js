@@ -5,8 +5,22 @@ import dabasePlugin from "./fastifyPlugin/database.js";
 import cors from "@fastify/cors";
 const fastify = Fastify({ logger: true });
 const db = fastify.register(dabasePlugin);
-fastify.register(cors, {
-  origin: process.env.COREWEB,
+const corsOptions = {
+  origin: "*",
+  methods: ["OPTIONS", "GET", "DELETE", "POST", "PUT", "PATCH"],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "authorization",
+    "Accept-Encoding",
+  ],
+  optionsSuccessStatus: 200,
+  exposedHeaders: "Content-Disposition",
+};
+fastify.register(require("fastify-cors"), {
+  corsOptions,
 });
 authRoutes.forEach((route) => {
   const base_path = "/api/v4/user";
