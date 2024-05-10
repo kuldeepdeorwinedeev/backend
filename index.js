@@ -23,7 +23,8 @@ userManageRoute.forEach((route) => {
 console.log({
   ...process.env,
 });
-fastify.listen(4000, (err, address) => {
+const port = process.env.PORT || 4000
+fastify.listen(port, (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
