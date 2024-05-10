@@ -5,8 +5,8 @@ import dabasePlugin from "./fastifyPlugin/database.js";
 import cors from "@fastify/cors";
 const fastify = Fastify({ logger: true });
 const db = fastify.register(dabasePlugin);
-await fastify.register(cors, {
-  origin: `https://deorwine-kuldeep-q5ix-gzm1yjyf0.vercel.app/`,
+fastify.register(cors, {
+  origin: ["https://deorwine-kuldeep-q5ix-gzm1yjyf0.vercel.app/"],
 });
 authRoutes.forEach((route) => {
   const base_path = "/api/v4/user";
@@ -23,8 +23,10 @@ userManageRoute.forEach((route) => {
 console.log({
   ...process.env,
 });
-const port = process.env.PORT || 4000
-fastify.listen(port, (err, address) => {
+const port = process.env.PORT || 4000;
+
+// Starting the server
+fastify.listen(port, "0.0.0.0", (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
