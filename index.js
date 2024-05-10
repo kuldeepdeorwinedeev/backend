@@ -2,7 +2,7 @@ import Fastify from "fastify";
 import authRoutes from "./routes/auth.js";
 import userManageRoute from "./routes/admin/userManage.js";
 import dabasePlugin from "./fastifyPlugin/database.js";
-import { fastifyCors } from "fastify-cors"; // Import the specific function from fastify-cors
+import { fastifyCors } from "@fastify/cors"; // Import the specific function from fastify-cors
 
 const fastify = Fastify({ logger: true });
 const db = fastify.register(dabasePlugin);
