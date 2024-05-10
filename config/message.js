@@ -1,0 +1,38 @@
+export const messages = {
+  status_code: {
+    success: 200,
+    server_error: 500,
+    auth_error: 401,
+    notFound_error: 404,
+    other_error: 202,
+  },
+
+  common_success_messages: {
+    success: "success",
+    success_userSignUp: "User signup successfully",
+    success_userSignIn: "User signin successfully.",
+    success_forgotPassword: "Reset password link sent successfully.",
+    success_resetPassword: "Password reset successfully",
+    success_addUser: "User added successfully.",
+    success_editUser: "User Edit  successfully.",
+    success_deleteUser: "User deleted successfully.",
+    success_getAllUser: "User access successfully",
+  },
+  common_error_messages: {
+    error: "error",
+    error_auth: "Require auth",
+    error_admin_auth: "Only admin can access",
+    error_user_already_exit: "User already exits",
+    error_user_not_found: "User not found",
+    error_data_not_found: "User data not found",
+    error_user: "Only user can access",
+    error_userSignUp: "User signup fail",
+    error_userSignIn: "User signin fail.",
+    error_forgotPassword: "Reset password link sent fail.",
+    error_resetPassword: "Password reset fail",
+    error_addUser: "User add fail.",
+    error_editUser: "User Edit  fail.",
+    error_deleteUser: "User delete fail.",
+    error_getAllUser: "User list access fail",
+  },
+};
