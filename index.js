@@ -16,6 +16,7 @@ const corsOptions = {
     "Accept",
     "authorization",
     "Accept-Encoding",
+"token",
   ],
   optionsSuccessStatus: 200,
   exposedHeaders: "Content-Disposition",
