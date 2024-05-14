@@ -19,6 +19,7 @@ export const getUserById = async (req, reply) => {
         reply
       );
     } else {
+    
       return sendErrorResponse(
         messages.common_error_messages.error_user_not_found,
         messages.status_code.other_error,
@@ -26,6 +27,7 @@ export const getUserById = async (req, reply) => {
       );
     }
   } catch (err) {
+ console.log(err)
     return sendErrorResponse(
       messages.common_error_messages.error,
       messages.status_code.server_error,
