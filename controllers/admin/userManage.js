@@ -12,6 +12,7 @@ export const getUserById = async (req, reply) => {
     const [data] = await executeQuery(selectQuery, [user_id]);
 
     if (data) {
+       data.password = ''
       return sendSuccessResponse(
         messages.common_success_messages.success_getUserById,
         data,
